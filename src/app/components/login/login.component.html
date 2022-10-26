@@ -1,0 +1,25 @@
+<div class="container">
+    <p>Iniciar Sesion</p>
+    <hr style="color: red;">
+    <form class="col-md-5 ml-0 pl-0" #loginForm = "ngForm"  (ngSubmit)="onSubmit(loginForm)">
+        <div class="form-group">
+            <label for="email">Corre Electronico:</label>
+            <input type="email" name="email" class="form-control" #email="ngModel" [(ngModel)]="user.email"
+            required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <small *ngIf="!email.valid && email.touched" class="invalid-feedback d-block">
+                EL CORREO ELECTRONICO NO ES VALIDO
+            </small>
+        </div>
+        <div class="form-group">
+            <label for="password">Constrasena:</label>
+            <input type="password" name="password" class="form-control" #password="ngModel" [(ngModel)]="user.password"
+            required >
+            <small *ngIf="!password.valid && password.touched" class="invalid-feedback d-block">
+                LA CONTRASENA NO ES VALIDA
+            </small>
+        </div>
+        <br>
+        <input type="submit" value="Iniciar Sesion" class="btn btn-success" 
+        [disabled]="loginForm.invalid" style="border-radius: 30px;">
+    </form>
+</div>

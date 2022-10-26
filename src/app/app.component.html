@@ -1,0 +1,40 @@
+<div class="container">
+  <br>
+<nav class="navbar navbar-expand-lg" style="background-color: rgba(0, 43, 63, 0.9); border-radius: 30px;">
+  <div class="container-fluid">
+    <a class="navbar-brand">ADM-HITECH</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/inicio']">Inicio</a>
+        </li>
+        <div *ngIf="identity && identity.nombre; else isLoggedOut" >
+        <li class="nav-item dropdown navbar-right">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ identity.nombre + ' ' + identity.apaterno }}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['/user-edit']">Editar Informacion</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/miperfil']">Mi Perfil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" [routerLink]="['logout/1']">Cerrar Sesion</a></li>
+          </ul>
+        </li>
+        </div>
+        <ng-template #isLoggedOut>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/login']">Iniciar Sesion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/register']">Crear Cuenta</a>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+<router-outlet></router-outlet>

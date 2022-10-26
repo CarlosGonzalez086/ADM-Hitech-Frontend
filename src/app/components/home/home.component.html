@@ -1,0 +1,7 @@
+<div class="container" *ngIf="identity && identity.nombre && identity.apaterno && identity.amaterno; else isLoggedOut">
+    <h1 style="text-align: center;">Bienvedio al sitio</h1>
+    <h2 style="text-align: center;">{{identity.nombre}} {{ identity.apaterno }} {{identity.amaterno}}</h2>
+</div>
+<ng-template #isLoggedOut>
+    
+</ng-template>

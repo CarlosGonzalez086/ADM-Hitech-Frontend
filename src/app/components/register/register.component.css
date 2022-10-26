@@ -1,0 +1,8 @@
+small{
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+input{
+    border-radius: 15px;
+}

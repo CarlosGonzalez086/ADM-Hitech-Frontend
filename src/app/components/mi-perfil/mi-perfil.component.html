@@ -1,0 +1,40 @@
+<div class="container">
+    <hr>
+    <br>
+    <h1>Mi informacion:</h1>
+    <td>
+        <tr>
+            <td>
+                Nombre: {{ identity.nombre }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Apellido Paterno : {{ identity.apaterno }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Apellido Materno : {{ identity.amaterno }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Telefono : {{ identity.telefono }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Fecha De Nacimiento : {{ identity.fecha_nacimiento }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Correo Electronico : {{ identity.email }}
+            </td>
+        </tr>
+    </td>
+    <br>
+    <a (click)="deletePost(user.email)" class="btn btn-danger"
+    style="border-radius: 30px;" data-bs-dismiss="modal">BORRAR CUENTA</a>
+</div>
